@@ -1,0 +1,69 @@
+//Name: Keyan Raahemifar, Austin Jabari
+//Date: May 21, 2014
+//Course: ICS 3UI
+//Exercise: Summative
+
+#include <iostream>
+#include <string>
+#include <cstdlib>
+#include <windows.h>
+#include <fstream>
+#include <iomanip>
+#include <vector>
+
+using std::cout;
+using std::cin;
+using std::ifstream;
+using std::ofstream;
+using std::string;
+using std::endl;
+using std::setw;
+using std::setprecision;
+//using std::to_string;
+using std::max;
+using std::min;
+using std::vector;
+
+struct Move
+{
+	int x;
+	int y;
+};
+struct Player { string name; int wins; int losses; };
+class game
+{
+public:
+	game (int x);
+    void displayboard();
+    void printScores();
+    void display();
+    void updateScore(string player, bool win);
+    bool check(int a, int b);
+    int drop(int b, char player);
+    bool checkWin(int player);
+    int check3inrow(int player);
+    int min(int depth);
+    bool EOG();
+    int score();
+    int Height(int j);
+    Move minimax(int depth);
+    int max(int depth);
+    void RunGame();
+    int AI();
+    string TakeName(string);
+      
+
+private:
+    int d;
+    char player;
+    //int moves[7]={0};
+    //int counter[7]={0};
+    int checkMove;
+    int saveDrop;
+    int j;
+    int threes;
+    string nameOfplayer;
+    string name1;
+    string name2;
+};
+
